@@ -13,20 +13,52 @@ The remaining nine columns are the features considered in the analysis
 Evaluating the model
 Use of different combination of nodes, layers and activation functions to determine whether results can be optimized to achieve 75% accuracy.
 
-Original attempt included two layers, with 8 and 5 nodes, respectively. Activation function for both layers was relu, sigmoid for the output:
+Original attempt:
+hidden node layers: 3
+layer 1: 80
+layer 2: 30
+activcation: relu
+epochs: 100
 
-Screen Shot 2022-03-05 at 22 59 02
-First optimization attempt included three layers with 20, 18, and 11 nodes and a combination of relu and tanh activation functions:
+Result:
 
-Screen Shot 2022-03-05 at 23 01 36
-Second optimization attempt included only two layers, using 9 and 6 nodes and the tanh function exclusively:
+[pic]
 
-Screen Shot 2022-03-05 at 23 03 05
-Third optimization attempt used three layers, including 7, 6, and 5 nodes, using a mix of relu and tanh:
+First attempt:
+hidden node layers: 3
+layer 1: 80
+layer 2: 30
+layer 3: 20
+Activation: relu
+epochs: 500
 
-Screen Shot 2022-03-05 at 23 04 41
-Fourth attempt used three layers with 25, 18 and 9 nodes each and relu activation:
+[pic]
 
-Screen Shot 2022-03-05 at 23 05 52
-Summary
+Second attempt:
+hidden node layers: 3
+layer 1: 100
+layer 2: 80
+layer 3: 50
+activation: tanh
+epochs: 1000
+
+[pic]
+
+Third attempt: (less is more)
+hidden node layers: 1
+layer 1: 80
+activation: relu
+epochs: 100
+
+[pic]
+
+Fourth Attempt:
+hidden node layers: 1
+layer 1: 50
+activation: relu
+epochs: 100
+
+[pic]
+
+## Summary
 None of the models were able to reach an accuracy score of 75%. Using different cut-off points for bucketing some of the feature data (increasing or decreasing the number of buckets) also did not change the outcome. The use of different activation functions similarly did not have an impact on the accuracy.
